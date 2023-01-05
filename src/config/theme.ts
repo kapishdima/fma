@@ -73,6 +73,11 @@ export const theme = createTheme({
       '800': '#212B36',
       '900': '#161C24',
     },
+    text: {
+      primary: '#212B36',
+      secondary: '#637381',
+      disabled: '#919EAB',
+    },
   },
   shadows: [
     'none',
