@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Card, Typography } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Typography variant="h1" color="primary">
+        Heading 1
+      </Typography>
+      <Typography variant="h2" color="secondary">
+        Heading 2
+      </Typography>
+      <Typography variant="h3">Heading 3</Typography>
+      <Typography variant="h4">Heading 4</Typography>
+      <Typography variant="h5">Heading 5</Typography>
+      <Typography variant="h6">Heading 6</Typography>
+
+      <Typography variant="subtitle1">subtitle1</Typography>
+      <Typography variant="subtitle2">subtitle2</Typography>
+      <Typography variant="body1">body1</Typography>
+      <Typography variant="body2">body2</Typography>
+      <Typography variant="caption">caption</Typography>
+      <Typography variant="overline">overline</Typography>
+
+      <Box boxShadow={11}>123</Box>
+    </>
   );
 }
 
