@@ -9,12 +9,12 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { theme } from '../../config/theme';
 
 export type DropdownItem = {
   icon?: JSX.Element;
   children?: JSX.Element;
   title: string | JSX.Element;
+  variant?: any;
 };
 
 type DropdownProps = {
@@ -40,9 +40,13 @@ const createHeader = (theme: Theme, header?: JSX.Element) => {
   );
 };
 
-const createTitle = (title: string | JSX.Element) => {
+const createTitle = (title: string | JSX.Element, variant?: any) => {
   if (typeof title === 'string') {
-    return <Typography variant="body2">{title}</Typography>;
+    return (
+      <Typography color={variant} variant="body2">
+        {title}
+      </Typography>
+    );
   }
 
   return title;
@@ -104,11 +108,11 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
       {createHeader(theme, header)}
-      {items.map(({ icon, title, children }) => {
+      {items.map(({ icon, title, children, variant }) => {
         return (
           <MenuItem sx={createMenuItemStyle(theme)}>
             {children ? children : null}
-            {icon ? icon : null} {createTitle(title)}
+            {icon ? icon : null} {createTitle(title, variant)}
           </MenuItem>
         );
       })}

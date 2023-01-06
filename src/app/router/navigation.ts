@@ -8,15 +8,32 @@ import CategoryIcon from '@mui/icons-material/Category';
 
 export type NavigationItem = {
   title: string;
-  key: string;
   path: string;
-  Icon: any;
+  Icon?: any;
+  children?: NavigationItem[];
+};
+
+export const categoryItem: NavigationItem = {
+  title: 'Categories',
+  path: Routes.CATEGORIES,
+  Icon: CategoryIcon,
+  children: [
+    { title: 'Продукты', path: Routes.CATEGORIES },
+    { title: 'Подписки', path: Routes.CATEGORIES },
+    { title: 'Проезд', path: Routes.CATEGORIES },
+    { title: 'Посиделки вне дома', path: Routes.CATEGORIES },
+    { title: 'Покупка', path: Routes.CATEGORIES },
+    { title: 'Алкашка', path: Routes.CATEGORIES },
+    { title: 'Сигареты', path: Routes.CATEGORIES },
+    { title: 'Подарки', path: Routes.CATEGORIES },
+    { title: 'Аренда', path: Routes.CATEGORIES },
+    { title: 'Коммуналка', path: Routes.CATEGORIES },
+  ],
 };
 
 export const sideNavigationItems: NavigationItem[] = [
-  { title: 'Dashboard', key: 'dashboard', path: Routes.DASHBOARD, Icon: DashboardIcon },
-  { title: 'Expences', key: 'expences', path: Routes.EXPENCES, Icon: TrendingDownIcon },
-  { title: 'Income', key: 'income', path: Routes.INCOME, Icon: TrendingUpIcon },
-  { title: 'Goals', key: 'goals', path: Routes.GOALS, Icon: DiamondIcon },
-  { title: 'Categories', key: 'categories', path: Routes.CATEGORIES, Icon: CategoryIcon },
+  { title: 'Dashboard', path: Routes.DASHBOARD, Icon: DashboardIcon },
+  { title: 'Expences', path: Routes.EXPENCES, Icon: TrendingDownIcon },
+  { title: 'Income', path: Routes.INCOME, Icon: TrendingUpIcon },
+  { title: 'Goals', path: Routes.GOALS, Icon: DiamondIcon },
 ];

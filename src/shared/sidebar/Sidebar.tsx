@@ -9,6 +9,7 @@ import Logo from '../../assets/logo.svg';
 
 export const Sidebar: React.FC = () => {
   const theme = useTheme();
+
   const drawerStyle = {
     '& .MuiDrawer-paper': {
       boxSizing: 'border-box',

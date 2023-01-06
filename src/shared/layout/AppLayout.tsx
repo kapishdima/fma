@@ -1,6 +1,7 @@
-import { AppBar } from './AppBar';
-import { Button, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import React from 'react';
+import { Box, Grid, useTheme } from '@mui/material';
+
+import { AppBar } from './AppBar';
 import { Sidebar } from '../sidebar/Sidebar';
 
 type AppLayoutProps = {
@@ -8,6 +9,7 @@ type AppLayoutProps = {
 };
 
 export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
+  const theme = useTheme();
   return (
     <Grid container>
       <Grid item width={280}>
@@ -19,7 +21,9 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
         </Grid>
         <Grid container>
           <Grid item xs={12}>
-            {children}
+            <Box pt={theme.spacing(3.5)} px={theme.spacing(3)}>
+              {children}
+            </Box>
           </Grid>
         </Grid>
       </Grid>

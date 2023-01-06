@@ -6,9 +6,9 @@ import { Box } from '@mui/system';
 function App() {
   return (
     <AppLayout>
-      <>
-        <Box height={500}></Box>
-      </>
+      <Box>
+        <Typography variant="h4">Hi, Welcome back</Typography>
+      </Box>
     </AppLayout>
   );
 }

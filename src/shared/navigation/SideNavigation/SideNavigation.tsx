@@ -2,10 +2,14 @@ import React from 'react';
 
 import { SideNavigationProvider } from './provider/SideNavigationProvider';
 import { SideNavigationList } from './SideNavigationList';
+import { sideNavigationItems } from '../../../app/router/navigation';
+import { CategoriesItems } from '../CategoriesItems/CategoriesItems';
 
 export const SideNavigation: React.FC = () => {
+  const extraItem = (index: number) => <CategoriesItems index={index} />;
+
   return (
-    <SideNavigationProvider>
+    <SideNavigationProvider items={sideNavigationItems} extraItems={extraItem}>
       <SideNavigationList />
     </SideNavigationProvider>
   );

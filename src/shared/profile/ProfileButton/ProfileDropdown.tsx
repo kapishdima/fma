@@ -10,7 +10,10 @@ type ProfileDropdownProps = {
 };
 
 export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({ anchorEl, opened, close }) => {
-  const profileMenuItems: DropdownItem[] = [{ title: 'Settings' }, { title: 'Logout' }];
+  const profileMenuItems: DropdownItem[] = [
+    { title: 'Settings' },
+    { title: 'Logout', variant: 'error.main' },
+  ];
   const profileHeader = (
     <Box display="flex" flexDirection="column">
       <Typography variant="subtitle1">Kapish Dima</Typography>

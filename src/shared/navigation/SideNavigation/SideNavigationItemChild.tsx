@@ -1,34 +1,30 @@
 import React from 'react';
+
 import { ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material';
+import { Box } from '@mui/system';
 
-import { NavigationItem } from '../../../app/router/navigation';
 import { useSideNavigationItem } from './hooks/useSideNavigationItem';
+import { NavigationItem } from '../../../app/router/navigation';
 
-type SideNavigationItemProps = NavigationItem & {
+type SideNavigationItemChildProps = NavigationItem & {
   index: number;
-  onClick?: () => void;
 };
 
-export const SideNavigationItem: React.FC<SideNavigationItemProps> = ({
+export const SideNavigationItemChild: React.FC<SideNavigationItemChildProps> = ({
   title,
   path,
-  Icon,
   index,
-  onClick,
 }) => {
-  const { setSelected, selected } = useSideNavigationItem(index);
+  const { selected, setSelected } = useSideNavigationItem(index);
   const theme = useTheme();
-
   return (
     <ListItemButton
       selected={selected}
-      onClick={onClick || setSelected}
+      onClick={setSelected}
       sx={{
         borderRadius: theme.spacing(1),
       }}>
-      <ListItemIcon sx={{ minWidth: 40 }}>
-        <Icon color={selected ? 'primary' : 'disabled'} />
-      </ListItemIcon>
+      <ListItemIcon sx={{ minWidth: 40 }} />
       <ListItemText
         primary={title}
         primaryTypographyProps={{

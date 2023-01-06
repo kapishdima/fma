@@ -1,20 +1,24 @@
 import React from 'react';
 
-import { List, ListSubheader, Typography } from '@mui/material';
-import { sideNavigationItems } from '../../../app/router/navigation';
-import { SideNavigationItem } from './SideNavigationItem';
+import { Box, List, ListSubheader, Typography, useTheme } from '@mui/material';
+import { useSideNavigation } from './hooks/useSideNavigation';
 
-export const SideNavigationList: React.FC = () => {
+type SideNavigationListProps = {};
+
+export const SideNavigationList: React.FC<SideNavigationListProps> = () => {
+  const sideNavigation = useSideNavigation();
+  const theme = useTheme();
+
   return (
     <List
       subheader={
-        <ListSubheader>
-          <Typography variant="caption">GENERAL</Typography>
-        </ListSubheader>
+        <Box pl={theme.spacing(2)} mb={theme.spacing(1)}>
+          <Typography variant="caption" color="text.disabled">
+            GENERAL
+          </Typography>
+        </Box>
       }>
-      {sideNavigationItems.map((navigationItem, index) => (
-        <SideNavigationItem {...navigationItem} index={index} />
-      ))}
+      {sideNavigation?.withExtraNavigation()}
     </List>
   );
 };
