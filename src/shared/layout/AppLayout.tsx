@@ -21,7 +21,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
         </Grid>
         <Grid container>
           <Grid item xs={12}>
-            <Box pt={theme.spacing(3.5)} px={theme.spacing(3)}>
+            <Box pt={theme.spacing(3)} px={theme.spacing(3)}>
               {children}
             </Box>
           </Grid>

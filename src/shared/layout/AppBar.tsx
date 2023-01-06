@@ -1,7 +1,5 @@
 import React from 'react';
-import { Grid, Toolbar, Typography, Box, useTheme } from '@mui/material';
-
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import { Grid, Toolbar, Box, useTheme } from '@mui/material';
 
 import { ProfileButton } from '../profile/ProfileButton/ProfileButton';
 
@@ -11,40 +9,9 @@ export const AppBar = () => {
     <Grid item xs={12}>
       <Toolbar
         sx={{
-          paddingY: theme.spacing(2),
+          borderBottom: `1px solid ${theme.palette.grey[100]}`,
         }}>
-        <Box width="100%">
-          <Grid container xs={5}>
-            <Grid
-              item
-              sx={{
-                flexGrow: 1,
-              }}>
-              <Typography variant="caption" color="text.secondary">
-                Expences
-              </Typography>
-              <Typography variant="h4">₴20,534</Typography>
-              <Box display="flex" columnGap={theme.spacing(0.5)} color={'error.main'}>
-                <TrendingUpIcon fontSize="small" />
-                <Typography variant="subtitle2">+20,534</Typography>
-              </Box>
-            </Grid>
-            <Grid
-              item
-              sx={{
-                flexGrow: 1,
-              }}>
-              <Typography variant="caption" color="text.secondary">
-                Income
-              </Typography>
-              <Typography variant="h4">₴210,234</Typography>
-              <Box display="flex" columnGap={theme.spacing(0.5)} color={'success.main'}>
-                <TrendingUpIcon fontSize="small" />
-                <Typography variant="subtitle2">+50,534</Typography>
-              </Box>
-            </Grid>
-          </Grid>
-        </Box>
+        <Box sx={{ flexGrow: 1 }}></Box>
         <ProfileButton />
       </Toolbar>
     </Grid>

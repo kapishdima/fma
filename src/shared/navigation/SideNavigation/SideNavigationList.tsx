@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, List, ListSubheader, Typography, useTheme } from '@mui/material';
+import { Box, List, Typography, useTheme } from '@mui/material';
 import { useSideNavigation } from './hooks/useSideNavigation';
 
 type SideNavigationListProps = {};

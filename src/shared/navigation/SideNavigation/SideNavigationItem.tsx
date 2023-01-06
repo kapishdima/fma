@@ -7,6 +7,7 @@ import { useSideNavigationItem } from './hooks/useSideNavigationItem';
 type SideNavigationItemProps = NavigationItem & {
   index: number;
   onClick?: () => void;
+  iconAfter?: JSX.Element;
 };
 
 export const SideNavigationItem: React.FC<SideNavigationItemProps> = ({
@@ -15,6 +16,7 @@ export const SideNavigationItem: React.FC<SideNavigationItemProps> = ({
   Icon,
   index,
   onClick,
+  iconAfter,
 }) => {
   const { setSelected, selected } = useSideNavigationItem(index);
   const theme = useTheme();
@@ -36,6 +38,7 @@ export const SideNavigationItem: React.FC<SideNavigationItemProps> = ({
           color: selected ? theme.palette.primary.main : theme.palette.text.secondary,
         }}
       />
+      {iconAfter}
     </ListItemButton>
   );
 };
