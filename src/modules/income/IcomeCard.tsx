@@ -4,13 +4,14 @@ import { NorthEastRounded, TrendingUp } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 
 import { StatsCard } from '../../shared/stats/StatsCard';
+import { IncomeChart } from './IncomeChart';
 
 export const IncomeCard: React.FC = () => {
   return (
     <StatsCard
       color="success"
       title="Income"
-      value="200,134"
+      value={200134}
       extraIcon={<NorthEastRounded />}
       subtitle={
         <Box display="flex" alignItems="center" color="success.darker" columnGap={1}>
@@ -20,6 +21,7 @@ export const IncomeCard: React.FC = () => {
           </Typography>
         </Box>
       }
+      footer={<IncomeChart />}
     />
   );
 };

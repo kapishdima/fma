@@ -1,14 +1,16 @@
 import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
-import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
+import { useCountUp } from 'react-countup';
+
+const BALANCE = 100044;
 
 export const BalancePreview: React.FC = () => {
+  const id = `${Date.now() + 1000}_stat-value`;
   const theme = useTheme();
+  useCountUp({ ref: id, end: BALANCE, prefix: '₴', duration: 0.8, separator: ',' });
   return (
     <Box
       sx={{
-        height: '100%',
-        position: 'relative',
         background: theme.palette.grey[200],
         padding: theme.spacing(3),
         borderRadius: theme.spacing(2),
@@ -17,8 +19,8 @@ export const BalancePreview: React.FC = () => {
         Current Balance
       </Typography>
 
-      <Typography variant="h3" color="text.primary">
-        ₴100,044
+      <Typography variant="h3" color="text.primary" id={id}>
+        {BALANCE}
       </Typography>
     </Box>
   );

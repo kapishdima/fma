@@ -17,3 +17,10 @@
 @import '~@fontsource/public-sans/700-italic.css';
 @import '~@fontsource/public-sans/800-italic.css';
 @import '~@fontsource/public-sans/900-italic.css';
+
+.apexcharts-tooltip,
+.apexcharts-tooltip.apexcharts-theme-light {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}

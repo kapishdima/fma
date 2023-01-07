@@ -17,7 +17,7 @@ export const theme = createTheme({
     primary: {
       main: '#3366FF',
       light: '#84A9FF',
-      lighter: '#CAFDF5',
+      lighter: '#D6E4FF',
       dark: '#1939B7',
       darker: '#091A7A',
       contrastText: '#FFFFFF',
@@ -81,6 +81,7 @@ export const theme = createTheme({
   },
   shadows: [
     'none',
+    '0px 0px 2px rgba(145, 158, 171, 0.2), 0px 12px 24px -4px rgba(145, 158, 171, 0.12)',
     '0px 8px 16px rgba(0, 171, 85, 0.24)',
     '0px 8px 16px rgba(51, 102, 255, 0.24)',
     '0px 8px 16px rgba(0, 184, 217, 0.24)',
@@ -94,7 +95,6 @@ export const theme = createTheme({
     '0px 16px 32px -4px rgba(145, 158, 171, 0.16)',
     '0px 20px 40px -4px rgba(145, 158, 171, 0.16)',
     '0px 24px 48px rgba(145, 158, 171, 0.16)',
-    '0px 0px 2px rgba(145, 158, 171, 0.2), 0px 12px 24px -4px rgba(145, 158, 171, 0.12)',
     '-40px 40px 80px -8px rgba(145, 158, 171, 0.24)',
     '0px 0px 2px rgba(145, 158, 171, 0.24), -20px 20px 40px -4px rgba(145, 158, 171, 0.24)',
     '',
@@ -162,6 +162,9 @@ export const theme = createTheme({
       fontSize: 12,
       fontWeight: 700,
       lineHeight: '18px',
+    },
+    button: {
+      fontWeight: 600,
     },
   },
 });
