@@ -2,7 +2,7 @@ import React from 'react';
 import { SouthWestRounded, TrendingDown } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 
-import { StatsCard } from '../../shared/stats/StatsCard';
+import { StatsCard } from 'shared/stats';
 import { ExpencesChart } from './ExpencesChart';
 
 export const ExpencesCard: React.FC = () => {

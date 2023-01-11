@@ -4,24 +4,20 @@ import Chart from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
 
 import { useChartTooltip } from './useChartTooltip';
-import { createChartConfig } from '../../app/charts/config';
+import { createAreaChartConfig } from 'app/charts/config';
+import { ChartBaseProps } from './@types';
 
-type ChartProps = {
-  data: number[];
-  xAxisData: any[];
-  color?: string;
-};
+type ChartProps = ChartBaseProps & {};
 
-export const AreaChart: React.FC<ChartProps> = ({ data, xAxisData, color }) => {
+export const AreaChart: React.FC<ChartProps> = ({ data, xAxisData, colors, height }) => {
   const { createTooltip } = useChartTooltip();
 
-  const chartSeries: ApexOptions['series'] = [{ name: 'Chart', data }];
-  const baseChartOptions = createChartConfig({
+  const baseChartOptions = createAreaChartConfig({
     xData: {
       type: 'datetime',
       data: xAxisData,
     },
-    color,
+    colors,
   });
   const chartOptions: ApexOptions = {
     ...baseChartOptions,
@@ -34,5 +30,5 @@ export const AreaChart: React.FC<ChartProps> = ({ data, xAxisData, color }) => {
     },
   };
 
-  return <Chart type="area" series={chartSeries} options={chartOptions} />;
+  return <Chart type="area" height={height} series={data} options={chartOptions} />;
 };

@@ -1,15 +1,16 @@
 import React from 'react';
 import { useTheme } from '@mui/material';
 
-import { AreaChart } from '../../shared/charts/AreaChart';
+import { AreaChart } from 'shared/charts';
 import { incomeStats } from '../../data';
 
 export const IncomeChart: React.FC = () => {
   const theme = useTheme();
   return (
     <AreaChart
-      data={incomeStats}
-      color={theme.palette.success.main}
+      data={[{ name: 'income', data: incomeStats }]}
+      colors={[theme.palette.success.main]}
+      height={180}
       xAxisData={[
         '2018-01-19T00:00:00.000Z',
         '2018-02-19T01:30:00.000Z',

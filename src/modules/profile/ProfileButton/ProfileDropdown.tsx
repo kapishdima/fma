@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Typography, Box } from '@mui/material';
-import { Dropdown, DropdownItem } from '../../dropdown/Dropdown';
+import { Dropdown, DropdownItem } from 'shared/dropdown';
 
 type ProfileDropdownProps = {
   anchorEl: null | HTMLElement;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Grid, useTheme } from '@mui/material';
 
 import { AppBar } from './AppBar';
-import { Sidebar } from '../sidebar/Sidebar';
+import { Sidebar } from 'shared/sidebar/Sidebar';
 
 type AppLayoutProps = {
   children: JSX.Element;

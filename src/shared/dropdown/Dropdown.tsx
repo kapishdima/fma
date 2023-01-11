@@ -1,31 +1,6 @@
 import React from 'react';
-import {
-  Box,
-  Divider,
-  Menu,
-  MenuItem,
-  MenuProps,
-  Theme,
-  Typography,
-  useTheme,
-} from '@mui/material';
-
-export type DropdownItem = {
-  icon?: JSX.Element;
-  children?: JSX.Element;
-  title: string | JSX.Element;
-  variant?: any;
-};
-
-type DropdownProps = {
-  anchorEl: MenuProps['anchorEl'];
-  onClose: MenuProps['onClose'];
-  onClick: MenuProps['onClick'];
-  PaperProps?: MenuProps['PaperProps'];
-  items: DropdownItem[];
-  header?: JSX.Element;
-  opened: boolean;
-};
+import { Box, Divider, Menu, MenuItem, Theme, Typography, useTheme } from '@mui/material';
+import { DropdownProps } from './@types';
 
 const createHeader = (theme: Theme, header?: JSX.Element) => {
   if (!header) {
@@ -79,6 +54,22 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
   const { anchorEl, onClose, onClick, PaperProps, items, opened, header } = props;
   const theme = useTheme();
 
+  const paperStyle = {
+    overflow: 'visible',
+    borderRadius: theme.spacing(1),
+    boxShadow:
+      '0px 0px 2px rgba(145, 158, 171, 0.24), -20px 20px 40px -4px rgba(145, 158, 171, 0.24)',
+    mt: 1.5,
+    px: theme.spacing(1),
+    '& .MuiAvatar-root': {
+      width: 32,
+      height: 32,
+      ml: -0.5,
+      mr: 1,
+    },
+    ...createCorner(),
+  };
+
   return (
     <Menu
       anchorEl={anchorEl}
@@ -89,21 +80,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
       PaperProps={{
         ...PaperProps,
         elevation: 0,
-        sx: {
-          overflow: 'visible',
-          borderRadius: theme.spacing(1),
-          boxShadow:
-            '0px 0px 2px rgba(145, 158, 171, 0.24), -20px 20px 40px -4px rgba(145, 158, 171, 0.24)',
-          mt: 1.5,
-          px: theme.spacing(1),
-          '& .MuiAvatar-root': {
-            width: 32,
-            height: 32,
-            ml: -0.5,
-            mr: 1,
-          },
-          ...createCorner(),
-        },
+        sx: paperStyle,
       }}
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>

@@ -8,6 +8,7 @@ export const BalancePreview: React.FC = () => {
   const id = `${Date.now() + 1000}_stat-value`;
   const theme = useTheme();
   useCountUp({ ref: id, end: BALANCE, prefix: '₴', duration: 0.8, separator: ',' });
+
   return (
     <Box
       sx={{

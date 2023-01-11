@@ -3,7 +3,7 @@ import React from 'react';
 import { NorthEastRounded, TrendingUp } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 
-import { StatsCard } from '../../shared/stats/StatsCard';
+import { StatsCard } from 'shared/stats';
 import { IncomeChart } from './IncomeChart';
 
 export const IncomeCard: React.FC = () => {

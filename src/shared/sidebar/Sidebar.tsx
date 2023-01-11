@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Drawer, useTheme } from '@mui/material';
 
-import { SideNavigation } from '../navigation/SideNavigation/SideNavigation';
-import { ProfilePreview } from '../profile/ProfilePreview';
+import { SideNavigation } from 'shared/navigation';
+import { ProfilePreview } from 'modules/profile/ProfilePreview';
 
 import Avatar from '../../assets/avatar.png';
 import Logo from '../../assets/logo.svg';

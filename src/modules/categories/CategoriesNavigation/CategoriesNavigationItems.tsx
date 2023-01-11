@@ -1,19 +1,19 @@
 import React from 'react';
 import { Collapse, List } from '@mui/material';
 
-import { SideNavigationItem } from '../../../shared/navigation/SideNavigation/SideNavigationItem';
+import { categoryItem } from 'app/router/navigation';
+import { SideNavigationItem, SideNavigationItemChild } from 'shared/navigation';
+
 import { useCategories } from './useCategories';
-import { categoryItem } from '../../../app/router/navigation';
-import { SideNavigationItemChild } from '../../../shared/navigation/SideNavigation/SideNavigationItemChild';
 
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
-type CategoriesItemsProps = {
+type CategoriesNavigationItemsProps = {
   index: number;
 };
 
-export const CategoriesItems: React.FC<CategoriesItemsProps> = ({ index }) => {
+export const CategoriesNavigationItems: React.FC<CategoriesNavigationItemsProps> = ({ index }) => {
   const { opened, onClick } = useCategories();
   return (
     <>

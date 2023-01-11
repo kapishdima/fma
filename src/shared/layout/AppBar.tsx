@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Toolbar, Box, useTheme } from '@mui/material';
 
-import { ProfileButton } from '../profile/ProfileButton/ProfileButton';
+import { ProfileButton } from 'modules/profile';
 
 export const AppBar = () => {
   const theme = useTheme();
